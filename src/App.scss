@@ -1,0 +1,88 @@
+#root {
+  width: 380px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  height: 95vh;
+  border-radius: 10px;
+}
+
+.btn{
+  background-color: #FFD504 !important;
+  color: black;
+  border-radius: 10px;
+  font-weight: 700 !important;
+}
+
+.btn-outline{
+  background-color: #fff !important;
+  border: 2.2px solid #FFD504 !important;
+}
+
+.buttons{
+  overflow-x: scroll;
+  gap: 10px;
+}
+
+.buttons::-webkit-scrollbar {
+    display: none;
+}
+
+.sub{
+  border: none;
+  background: none;
+  font-weight: 700;
+  padding: 4px 0;
+  margin: 0 12px;
+}
+
+.selected{
+  border-bottom: 2.2px solid #FFD504;
+}
+
+.card-body{
+  display: flex;
+  align-items: center;
+}
+
+.card-text{
+  text-align: start;
+  width: 80%;
+  h6{
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+  p{
+    font-size: 15px;
+    font-weight: 400;
+    color: gray;
+    margin-bottom: 0px;
+  }
+}
+
+.product-card{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 58vh;
+}
+
+.product-card::-webkit-scrollbar {
+    display: none;
+}
+
+.card{
+  margin-bottom: 12px;
+  border: 2.2px solid #FFD504 !important;
+
+}
+
+.error{
+  font-weight: 700;
+  text-align: left;
+  padding: 10px;
+  border: 2.2px solid #FFD504 !important;
+  border-radius: 10px;
+}
