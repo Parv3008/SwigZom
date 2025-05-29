@@ -1,10 +1,11 @@
 import React from 'react';
 import MainCategories from '../components/MainCategories';
+import '../App.scss';
 
 const Home = () => {
   return (
-    <div className="">
-      <h4 className='fw-bold'>Kings Arms Cardington</h4>
+    <div className="title">
+      <h1>Kings Arms Cardington</h1>
       <p>134 High Street, Kempston, Bedford,<br /> Bedfordshire, MK42 7BN</p>
       <MainCategories />
     </div>

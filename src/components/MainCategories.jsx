@@ -16,7 +16,7 @@ const MainCategories = () => {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <div className="buttons d-flex justify-content-center">
         {mainCategories?.map(cat => (
           <button

@@ -3,18 +3,23 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-  font-family: "Oswald", sans-serif;
+  font-family: "Gilroy", sans-serif;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   height: 95vh;
   border-radius: 10px;
+  position: relative;
+  overflow-y: hidden;
 }
 
 .btn{
   background-color: #FFD504 !important;
   color: black;
-  border-radius: 10px;
-  font-weight: 700 !important;
+  border-radius: 10px !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  text-transform: uppercase;
 }
+
 
 .btn-outline{
   background-color: #fff !important;
@@ -33,9 +38,10 @@
 .sub{
   border: none;
   background: none;
-  font-weight: 700;
+  font-weight: 800;
   padding: 4px 0;
   margin: 0 12px;
+  font-size: 15px;
 }
 
 .selected{
@@ -51,22 +57,28 @@
   text-align: start;
   width: 80%;
   h6{
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 0px;
+    font-size: 14px;
   }
   p{
-    font-size: 15px;
-    font-weight: 400;
-    color: gray;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: gray !important;   
     margin-bottom: 0px;
   }
+}
+
+.price{
+  font-weight: 800;
+  font-size: 22px ;
 }
 
 .product-card{
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  height: 58vh;
+  height: calc(95vh - 20vh);
 }
 
 .product-card::-webkit-scrollbar {
@@ -76,7 +88,6 @@
 .card{
   margin-bottom: 12px;
   border: 2.2px solid #FFD504 !important;
-
 }
 
 .error{
@@ -85,4 +96,17 @@
   padding: 10px;
   border: 2.2px solid #FFD504 !important;
   border-radius: 10px;
+}
+
+.title{
+  h1{
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+  p{
+    color: gray;
+    font-weight: 600;
+    font-size: 12px;
+  }
 }

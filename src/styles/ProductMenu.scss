@@ -1,0 +1,125 @@
+.bottom-modal {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bottom-container {
+  width: 100%;
+  min-height: 75%;
+  background: #fff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #f2f2f2;
+  padding-bottom: 15px;
+  h5 {
+    font-weight: 800;
+    font-size: 22px;
+  }
+  button {
+    background-color: #ffd504;
+    font-weight: 800 !important;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+  }
+}
+
+.bottom-body {
+  margin-top: 10px;
+  text-align: left;
+  h6 {
+    font-weight: 800;
+    font-size: 20px;
+  }
+}
+
+.price-btn {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid #f2f2f2;
+  padding-bottom: 10px;
+  button {
+    font-weight: 800;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: none;
+    padding: 0 15px;
+  }
+  .isActive {
+    background-color: #ffd504;
+  }
+  .notActive {
+    border: 2px solid #ffd504;
+  }
+}
+
+.extra{
+  border-bottom: 3px solid #f2f2f2;
+  padding-bottom: 10px; 
+}
+
+.extras {
+  label {
+    font-weight: 800;
+    font-size: 18px;
+  }
+  .form-check-input {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #ffd504;
+  }
+  .form-check-input:checked {
+    background-color: #ffd504;
+  }
+  
+}
+
+.quantity{
+  button{
+    background-color: #ffd504;
+    // height: 50px;
+    // width:50px;
+    padding: 2px 15px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 800;
+    font-size: 25px;
+  }
+  span{
+    border: 2px solid #ffd504;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 800;
+  }
+}
+
+.Add-cart{
+  border-radius: 10px;
+  background-color: #ffd504;
+  color: black;
+  font-weight: 800;
+  font-size: 18px;
+  border: none;
+  padding: 8px;
+}
