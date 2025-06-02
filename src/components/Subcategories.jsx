@@ -1,27 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectedSubcategory } from '../redux/actions/subcategoriesActions';
 import ProductsList from './ProductsList';
 
 const Subcategories = ({ parentId, categories, products, autoSelectFirstSubcategory }) => {
-  const [selectedSubId, setSelectedSubId] = useState(null);
+  const dispatch = useDispatch();
+  const selectedSubId = useSelector(state => state.subcategories.selectedSubcategoryId);
 
   const subcategories = categories.filter(cat => cat.parent === parentId);
 
   useEffect(() => {
     if (autoSelectFirstSubcategory && subcategories.length > 0) {
-      setSelectedSubId(subcategories[0].id); 
+      dispatch(setSelectedSubcategory(subcategories[0].id));
     }
-  }, [parentId]);
+  }, [dispatch, parentId, autoSelectFirstSubcategory, subcategories]);
+
+  const handleSelect = (id) => {
+    dispatch(setSelectedSubcategory(id));
+  };
 
   return (
     <div className="mt-2">
       <div className="buttons d-flex justify-content-start">
-        {subcategories?.map(sub => (
+        {subcategories.map(sub => (
           <button
-            key={sub?.id}
-            className={`sub ${selectedSubId === sub?.id ? 'selected' : 'sub'}`}
-            onClick={() => setSelectedSubId(sub?.id)}
+            key={sub.id}
+            className={`sub ${selectedSubId === sub.id ? 'selected' : ''}`}
+            onClick={() => handleSelect(sub.id)}
           >
-            {sub?.name}
+            {sub.name}
           </button>
         ))}
       </div>
