@@ -1,35 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setSelectedVariant,
+  toggleExtra,
+  setQuantity,
+  resetProductMenu,
+} from "../redux/actions/menuActions";
 import "../styles/ProductMenu.scss";
+import { FormattedMessage } from "react-intl";
+import { addToCart } from "../redux/actions/cartActions";
 
 const ProductMenu = ({ product, onClose }) => {
-  const [selectedVariant, setSelectedVariant] = useState(null);
-  const [selectedExtras, setSelectedExtras] = useState([]);
-  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+  const { selectedVariant, selectedExtras, quantity } = useSelector(
+    (state) => state.menu
+  );
 
   useEffect(() => {
     if (product?.variants?.length > 0) {
-      setSelectedVariant(product.variants[0].name);
+      dispatch(resetProductMenu(product.variants[0].name));
     }
-    setSelectedExtras([]);
-    setQuantity(1);
-  }, [product]);
+  }, [product, dispatch]);
 
   if (!product) return null;
 
   const handleVariantSelect = (variant) => {
-    setSelectedVariant(variant.name);
+    dispatch(setSelectedVariant(variant.name));
   };
 
   const handleExtraToggle = (extraName) => {
-    setSelectedExtras((prev) =>
-      prev.includes(extraName)
-        ? prev.filter((e) => e !== extraName)
-        : [...prev, extraName]
-    );
+    dispatch(toggleExtra(extraName));
   };
 
-  const incrementQty = () => setQuantity((prev) => prev + 1);
-  const decrementQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const handleAddToCart = () => {
+  dispatch(addToCart(product, selectedVariant, selectedExtras, quantity));
+  onClose();
+};
+
+  const incrementQty = () => dispatch(setQuantity(quantity + 1));
+  const decrementQty = () => dispatch(setQuantity(Math.max(1, quantity - 1)));
 
   return (
     <div className="bottom-modal" onClick={onClose}>
@@ -38,16 +47,17 @@ const ProductMenu = ({ product, onClose }) => {
           <h5>{product.name}</h5>
           <button onClick={onClose}>X</button>
         </div>
+
         <div className="bottom-body">
           {product.variants && (
             <>
-              <h6>Size</h6>
+              <h6><FormattedMessage id="selectSize"/></h6>
               <div className="price-btn">
                 {product.variants.map((v, idx) => (
                   <button
                     key={idx}
                     type="button"
-                    className={`${selectedVariant === v.name ? "isActive" : "notActive"}`}
+                    className={selectedVariant === v.name ? "isActive" : "notActive"}
                     onClick={() => handleVariantSelect(v)}
                   >
                     <span>{v.name}</span> <span>(£{v.price})</span>
@@ -59,24 +69,24 @@ const ProductMenu = ({ product, onClose }) => {
 
           {product.extras && (
             <div className="mt-3">
-              <h6>Select Options</h6>
+              <h6><FormattedMessage id="selectOptions"/></h6>
               <div className="extra">
-              {product.extras.map((e, idx) => (
-                <div className="extras d-flex justify-content-between align-items-center mb-2" key={idx}>
-                  <label htmlFor={`extra-${idx}`} className="mb-0">
-                    {e.name} (+ £{e.price})
-                  </label>
-                  <div className="d-flex align-items-center">
-                    <input
-                      className="form-check-input ms-2"
-                      type="checkbox"
-                      id={`extra-${idx}`}
-                      checked={selectedExtras.includes(e.name)}
-                      onChange={() => handleExtraToggle(e.name)}
-                    />
+                {product.extras.map((e, idx) => (
+                  <div className="extras d-flex justify-content-between align-items-center mb-2" key={idx}>
+                    <label htmlFor={`extra-${idx}`} className="mb-0">
+                      {e.name} (+ £{e.price})
+                    </label>
+                    <div className="d-flex align-items-center">
+                      <input
+                        className="form-check-input ms-2"
+                        type="checkbox"
+                        id={`extra-${idx}`}
+                        checked={selectedExtras.includes(e.name)}
+                        onChange={() => handleExtraToggle(e.name)}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
               </div>
             </div>
           )}
@@ -90,7 +100,7 @@ const ProductMenu = ({ product, onClose }) => {
           </div>
 
           <div className="mt-4">
-            <button className="Add-cart w-100">Add to Cart</button>
+            <button className="Add-cart w-100" onClick={handleAddToCart}><FormattedMessage id="addToCart"/></button>
           </div>
         </div>
       </div>

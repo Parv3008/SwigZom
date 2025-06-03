@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSelectedProduct, clearSelectedProduct } from "../redux/actions/productActions";
 import ProductMenu from "./ProductMenu";
 
 const ProductsList = ({ products }) => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const dispatch = useDispatch();
+  const selectedProduct = useSelector(state => state.product.selectedProduct);
 
   const handleProductClick = (product) => {
-    setSelectedProduct(product);
+    dispatch(setSelectedProduct(product));
   };
 
   const handleCloseMenu = () => {
-    setSelectedProduct(null);
+    dispatch(clearSelectedProduct());
   };
 
   return (
@@ -31,9 +34,7 @@ const ProductsList = ({ products }) => {
                     <p className="card-text">{product.description}</p>
                   </div>
                   <div>
-                    <span className="price">
-                      £{product.price.toFixed(1)}
-                    </span>
+                    <span className="price">£{product.price.toFixed(1)}</span>
                   </div>
                 </div>
               </div>
