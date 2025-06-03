@@ -1,5 +1,11 @@
 {
   "addToCart": "कार्ट में जोड़ें",
   "selectSize": "आकार चुनें",
-  "selectOptions": "विकल्प चुनें"
+  "selectOptions": "विकल्प चुनें",
+  "viewBasket": "टोकरी देखें",
+  "tableNumber": "टेबल नंबर",
+  "confirmOrder": "ऑर्डर की पुष्टि करें",
+  "massage": "इस ऑर्डर को देकर आप सहमत हैं कि आप Kings Arms में उपस्थित हैं और 18 वर्ष से अधिक आयु के हैं।",
+  "cancel": "रद्द करें",
+  "placeOrder": "ऑर्डर करें"
 }

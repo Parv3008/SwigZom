@@ -1,5 +1,11 @@
 {
   "addToCart": "Adicionar ao carrinho",
   "selectSize": "Selecionar tamanho",
-  "selectOptions": "Selecionar opções"
+  "selectOptions": "Selecionar opções",
+  "viewBasket": "Ver carrinho",
+  "tableNumber": "Número da mesa",
+  "confirmOrder": "Confirmar pedido",
+  "massage": "Ao fazer este pedido, você concorda que está presente no Kings Arms e tem mais de 18 anos.",
+  "cancel": "Cancelar",
+  "placeOrder": "Fazer pedido"
 }

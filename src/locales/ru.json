@@ -1,5 +1,11 @@
 {
   "addToCart": "Добавить в корзину",
-  "selectSize": "Выбрать размер",
-  "selectOptions": "Выбрать опции"
+  "selectSize": "Выберите размер",
+  "selectOptions": "Выберите опции",
+  "viewBasket": "Просмотр корзины",
+  "tableNumber": "Номер стола",
+  "confirmOrder": "Подтвердить заказ",
+  "massage": "Размещая заказ, вы подтверждаете, что находитесь в Kings Arms и вам более 18 лет.",
+  "cancel": "Отмена",
+  "placeOrder": "Оформить заказ"
 }

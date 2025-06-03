@@ -1,3 +1,2 @@
-export const ADD_TO_BASKET = "ADD_TO_BASKET";
-export const SET_BASKET_NOTE = "SET_BASKET_NOTE";
-export const SET_TABLE_NUMBER = "SET_TABLE_NUMBER";
+export const SET_NOTES = 'SET_NOTES';
+export const SET_TABLE_NUMBER = 'SET_TABLE_NUMBER';
