@@ -8,6 +8,8 @@ const Subcategories = ({ parentId, categories, products, autoSelectFirstSubcateg
   const selectedSubId = useSelector(state => state.subcategory.selectedSubcategoryId);
 
   const subcategories = categories.filter(cat => cat.parent === parentId);
+  console.log(products, "aaa");
+  
 
   useEffect(() => {
     if (autoSelectFirstSubcategory && subcategories.length > 0) {

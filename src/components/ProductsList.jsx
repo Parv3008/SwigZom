@@ -6,7 +6,7 @@ import ProductMenu from "./ProductMenu";
 const ProductsList = ({ products }) => {
   const dispatch = useDispatch();
   const selectedProduct = useSelector(state => state.product.selectedProduct);
-
+  console.log(products, "asasa");
   const handleProductClick = (product) => {
     dispatch(setSelectedProduct(product));
   };
