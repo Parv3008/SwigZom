@@ -34,6 +34,7 @@ const ProductMenu = ({ product, onClose }) => {
 
   const handleAddToCart = () => {
   dispatch(addToCart(product, selectedVariant, selectedExtras, quantity));
+  console.log(product,"bbbbbbbbbbb");
   onClose();
 };
 

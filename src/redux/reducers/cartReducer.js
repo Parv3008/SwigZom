@@ -6,8 +6,8 @@ const initialState = {
 
 function checkVarient(arr1, arr2) {
   if (arr1.length !== arr2.length) return false;
-
   const arr2Copy = [...arr2];
+  console.log(arr2Copy,"aaaaaaaaaaaaa");
   for (let i = 0; i < arr1.length; i++) {
     const item = arr1[i];
     const index = arr2Copy.indexOf(item);
